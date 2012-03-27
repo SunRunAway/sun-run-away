@@ -10,5 +10,5 @@
 
 {% block content %}
     <p>{{ post.posted }}</p>
-    {{ post.body }}
+    {{ post.body|safe }}
 {% endblock %}

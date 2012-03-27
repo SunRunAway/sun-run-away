@@ -107,7 +107,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-     os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
+     os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
 )
 
 INSTALLED_APPS = (
@@ -122,7 +122,6 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     "DjangoBlog.blog",
-    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -183,5 +182,8 @@ try:
 
         if url.scheme == 'mysql':
             DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
+
+        INSTALLED_APPS.__add__(('gunicorn',))
+
 except Exception:
     print 'Unexpected error:', sys.exc_info()
