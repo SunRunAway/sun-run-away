@@ -121,7 +121,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    "DjangoBlog.blog",
+    'DjangoBlog.blog',
+    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -183,7 +184,6 @@ try:
         if url.scheme == 'mysql':
             DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
 
-        INSTALLED_APPS.__add__(('gunicorn',))
 
 except Exception:
     print 'Unexpected error:', sys.exc_info()
