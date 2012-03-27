@@ -110,6 +110,7 @@ TEMPLATE_DIRS = (
      os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
 )
 
+import os
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,7 +123,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'DjangoBlog.blog',
-    'gunicorn',
+    'gunicorn' if 'DATABASE_URL' in os.environ else 'DjangoBlog.blog',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -148,7 +149,6 @@ LOGGING = {
     }
 }
 
-import os
 import sys
 import urlparse
 
