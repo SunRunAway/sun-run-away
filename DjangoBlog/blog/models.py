@@ -10,7 +10,7 @@ class Blog (models.Model):
     slug = models.SlugField(max_length=100, blank=True, null=True, unique=True)
     body = models.TextField()
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
-    category = models.ForeignKey("blog.Category", null=True)
+    category = models.ManyToManyField("blog.Category", null=True)
 
     def __unicode__(self):
         return u'%s' % self.title
