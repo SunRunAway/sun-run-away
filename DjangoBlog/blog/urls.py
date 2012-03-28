@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, url
-from DjangoBlog import settings
+
 urlpatterns = patterns('',
     url(r'^$', 'blog.views.index'),
     url(r'^page/(?P<page>\d+)/$', 'blog.views.index'),
@@ -23,7 +23,7 @@ urlpatterns = patterns('',
 )
 
 import os
-if not settings.DEBUG:
+if 'DATABASE_URL' in os.environ:
     urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': os.path.join(os.path.dirname(__file__), 'statics').replace('\\', '/')}),
     )
