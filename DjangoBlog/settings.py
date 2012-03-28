@@ -61,12 +61,12 @@ STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'sitestatic').replace('\\'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = 'http://sunrunaway.herokuapp.com/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = 'http://sunrunaway.herokuapp.com/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
