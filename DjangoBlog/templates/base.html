@@ -5,26 +5,43 @@
                 Sun Run Away
             {% endblock %}
         </title>
+        <link href="/static/css/blog-build.css" media="screen" rel="stylesheet" type="text/css" />
     </head>
-    <body>
-        <header>
-            {% block header %}
-                block title
-            {% endblock %}
 
+    <body>
+        <section id="conductor">
+
+            <header>
+                <h3 class="date">
+                    {% block banner %}
+                        welcome to my blog
+                    {% endblock %}
+                </h3>
+            </header>
+
+            <ul class="posts">
+                {% block content %}
+                    <li class='post'>Opps~ There is no content.</li>
+                {% endblock %}
+                {% block footer %}{% endblock %}
+            </ul>
+        </section>
+
+        <header id="simple" class="bigsite">
+            <h1><a href="/">Sun <br />Run Away</a></h1>
+            <h2>Feng Liyuan </h2>
+            <ul id="user_info">
+                <li class="mail"><a href="mailto:DarkTemplar.f@gmail.com">E-mail</a></li>
+                <li class="github"><a href="https://github.com/flybird8">github</a></li>
+                <li class="rss"><a href="/feed.rss">rss feed</a></li>
+            </ul>
+
+            <figure id="logo_blog">
+            </figure>
         </header>
 
-            {% block content %}
-                if u see this, congratulations!
-                you've found a bug of my website!
-                please contact darktemplar.f@gmail.com
-            {% endblock %}
-
-        <footer>
-            {% block footer %}
-
-            {% endblock %}
-        </footer>
 
     </body>
 </html>
+
+

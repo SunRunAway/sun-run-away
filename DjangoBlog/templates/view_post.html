@@ -1,23 +1,44 @@
 {% extends 'base.html' %}
 
+
 {% block head_title %}
-    {{ post.title}}
+    {{ post.title }}
 {% endblock %}
 
-{% block header %}
-    <h1>{{ post.title}}</h1>
+{% block banner %}
+    {{ post.posted }}
 {% endblock %}
 
 {% block content %}
-    <p> {{ post.posted }}</p>
-    <article>{{ post.body|safe }}</article>
+
+    <li class='post'>
+        <article>
+            <h2><a class='no-link' href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+            <p>{{ post.body|safe }}</p>
+        </article>
+    </li>
 {% endblock %}
 
 {% block footer %}
-    {% if postPrevious %}
-        <a href="{{ postPrevious.get_absolute_url }}">previous</a>
-    {% endif %}
-    {% if postNext %}
-        <a href="{{ postNext.get_absolute_url }}">next</a>
-    {% endif %}
+    <li class='padded'>
+        {% if postPrevious %}
+            <a href="{{ postPrevious.get_absolute_url }}">previous</a>
+        {% endif %}
+        {% if postNext %}
+            <a href="{{ postNext.get_absolute_url }}">next</a>
+        {% endif %}
+    </li>
+
+    <li class='padded'>
+        Categories:
+        {% if categories %}
+            {% for category in categories %}
+                <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>　
+            {% endfor %}
+        {% endif %}
+    </li>
+
+    <li class='padded'>
+        <a href="/">Homepage</a>
+    </li>
 {% endblock %}

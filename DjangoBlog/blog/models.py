@@ -12,6 +12,9 @@ class Blog (models.Model):
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
     category = models.ManyToManyField("blog.Category", null=True)
 
+    class Meta:
+        ordering = ['id']  # or 'posted'?
+
     def __unicode__(self):
         return u'%s' % self.title
 
