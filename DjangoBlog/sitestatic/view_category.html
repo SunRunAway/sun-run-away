@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block head_title %}
+    viewing category '{{ category.title}}'
+{% endblock %}
+
+{% block banner %}
+    Category: {{ category.title}}
+{% endblock %}
+
+{% block footer %}
+    <li class='padded'>
+        Pages:
+        {% for i in pageRange %}
+            {% ifequal forloop.counter pageNum %}
+                {{ forloop.counter }}
+            {% else %}
+                <a href="{{ category.get_absolute_url }}page/{{ forloop.counter }}/">{{ forloop.counter }}</a>
+            {% endifequal %}
+        {% endfor %}
+    </li>
+    <li class='padded'>
+        <a href="/">Homepage</a>
+    </li>
+{% endblock %}

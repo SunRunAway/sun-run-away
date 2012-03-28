@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head_title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block banner %}
+    {{ nowDate }}
+{% endblock %}
+
+{% block content %}
+    {% if posts %}
+        {% for post in posts %}
+            <li class='post'>
+                <article>
+                    <h2><a class='no-link' href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                    <p>{{ post.body|safe }}</p>
+                </article>
+            </li>
+        {% endfor %}
+    {% else %}
+        <li class='post'>There is no post</li>
+    {% endif %}
+{% endblock %}
+
+
+{% block footer %}
+    <li class='padded'>
+        Pages:
+        {% for i in pageRange %}
+            {% ifequal forloop.counter pageNum %}
+                {{ forloop.counter }}
+            {% else %}
+                <a href="/page/{{ forloop.counter }}/">{{ forloop.counter }}</a>
+            {% endifequal %}
+        {% endfor %}
+    </li>
+{% endblock %}
+
+
+<!-- 不知道放哪里了。。。
+
+    {% if categories %}
+        <ul>
+            {% for category in categories %}
+                <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There is no category</p>
+    {% endif %}
+
+-->

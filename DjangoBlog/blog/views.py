@@ -1,5 +1,6 @@
 # Create your views here.
 from blog.models import Blog, Category
+from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 import datetime
 
@@ -16,7 +17,7 @@ def index(request, page='1'):
         'pageNum': int(page),
         'pageRange': range(totalPageNum),
         'nowDate': datetime.date.today(),
-    })
+    }, context_instance=RequestContext(request))
 
 
 def view_post(request, slug):
@@ -36,7 +37,7 @@ def view_post(request, slug):
         'postPrevious': postPrevious,
         'postNext': postNext,
         'categories': Category.objects.filter(blog=post)
-    })
+    }, context_instance=RequestContext(request))
 
 
 def view_category(request, slug, page='1'):
@@ -50,4 +51,4 @@ def view_category(request, slug, page='1'):
         'posts': blogsFromCategory[end - ARTICLES_PER_PAGE: end],
         'pageNum': int(page),
         'pageRange': range(totalPageNum),
-    })
+    }, context_instance=RequestContext(request))
