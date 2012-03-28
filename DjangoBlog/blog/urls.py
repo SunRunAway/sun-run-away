@@ -22,8 +22,9 @@ urlpatterns = patterns('',
 
 )
 
-import os
-if 'DATABASE_URL' in os.environ:
+
+import settings
+if not settings.DEBUG:
     urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': os.path.join(os.path.dirname(__file__), 'statics').replace('\\', '/')}),
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     )
