@@ -23,12 +23,12 @@ def index(request, page='1'):
 def view_post(request, slug):
     post = get_object_or_404(Blog, slug=slug)
     try:
-        postPrevious = Blog.objects.reverse().filter(id__lt=post.id)[0]
+        postPrevious = Blog.objects.reverse().filter(id__gt=post.id)[0]
     except IndexError:
         postPrevious = None
 
     try:
-        postNext = Blog.objects.filter(id__gt=post.id)[0]
+        postNext = Blog.objects.filter(id__lt=post.id)[0]
     except IndexError:
         postNext = None
 
