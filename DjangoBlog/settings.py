@@ -2,6 +2,8 @@
 import os
 
 DEBUG = True
+if 'DATABASE_URL' in os.environ:
+    DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
