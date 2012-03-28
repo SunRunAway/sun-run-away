@@ -4,11 +4,20 @@
     {{ post.title}}
 {% endblock %}
 
-{% block title %}
-    {{ post.title}}
+{% block header %}
+    <h1>{{ post.title}}</h1>
 {% endblock %}
 
 {% block content %}
-    <p>{{ post.posted }}</p>
-    {{ post.body|safe }}
+    <p> {{ post.posted }}</p>
+    <article>{{ post.body|safe }}</article>
+{% endblock %}
+
+{% block footer %}
+    {% if postPrevious %}
+        <a href="{{ postPrevious.get_absolute_url }}">previous</a>
+    {% endif %}
+    {% if postNext %}
+        <a href="{{ postNext.get_absolute_url }}">next</a>
+    {% endif %}
 {% endblock %}

@@ -7,16 +7,24 @@
         </title>
     </head>
     <body>
-        <h1>
-            {% block title %}
+        <header>
+            {% block header %}
                 block title
             {% endblock %}
 
-        </h1>
+        </header>
+
             {% block content %}
                 if u see this, congratulations!
                 you've found a bug of my website!
                 please contact darktemplar.f@gmail.com
             {% endblock %}
+
+        <footer>
+            {% block footer %}
+
+            {% endblock %}
+        </footer>
+
     </body>
 </html>

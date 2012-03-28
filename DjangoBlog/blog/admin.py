@@ -4,7 +4,6 @@ from blog.models import Blog, Category
 
 class BlogAdmin(admin.ModelAdmin):
     fields = ('title', 'body', 'category')
-    #prepopulated_fields = {'slug': ('title', )}
 
 
 class CategoryAdmin(admin.ModelAdmin):

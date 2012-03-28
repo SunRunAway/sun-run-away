@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}
-    Sun Run Away ...
+{% block header %}
+    <h1>Sun Run Away ...</h1>
 {% endblock %}
 
 
@@ -27,4 +27,17 @@
         <p>There is no post</p>
     {% endif %}
 
+
+{% endblock %}
+
+
+{% block footer %}
+    Pages:
+    {% for i in pageRange %}
+        {% ifequal forloop.counter pageNum %}
+            {{ forloop.counter }}
+        {% else %}
+            <a href="/page/{{ forloop.counter }}/">{{ forloop.counter }}</a>
+        {% endifequal %}
+    {% endfor %}
 {% endblock %}

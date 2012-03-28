@@ -4,7 +4,7 @@
     viewing category '{{ category.title}}'
 {% endblock %}
 
-{% block title %}
+{% block header %}
     {{ category.title}}
 {% endblock %}
 
@@ -14,7 +14,7 @@
             {% for post in posts %}
                 <li>
                     <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                </li> 
+                </li>
             {% endfor %}
         </ul>
     {% else %}
