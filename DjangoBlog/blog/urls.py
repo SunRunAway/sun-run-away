@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, url
-
+import settings
 
 urlpatterns = patterns('',
     url(r'^$', 'blog.views.index'),
@@ -22,3 +22,10 @@ urlpatterns = patterns('',
     ),
 
 )
+
+
+if not settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    )
+
