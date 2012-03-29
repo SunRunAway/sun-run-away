@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import permalink
 from django.template.defaultfilters import slugify
+from django.utils.http import urlquote
 import datetime
 
 
@@ -23,10 +24,10 @@ class Blog (models.Model):
         return ("view_blog_post", None, {"slug": self.slug})
 
     def save(self):
-        super(Blog, self).save()
+        #super(Blog, self).save()
         date = datetime.date.today()
         self.slug = '%i/%i/%i/%s' % (
-            date.year, date.month, date.day, slugify(self.title)
+            date.year, date.month, date.day, slugify(urlquote(self.title))
         )
         super(Blog, self).save()
 

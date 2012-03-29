@@ -6,6 +6,49 @@
             {% endblock %}
         </title>
         <link href="{{ STATIC_URL }}css/blog-build.css" media="screen" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">
+            var a = 0
+            $(document).ready(function() {                   //相当于绑定load事件
+                $("#service_hook").click(function() {        //mouseover事件
+                    if (a == 0) {
+                        a = 1
+                        $("#magic_bar").show(300)               //可加上1秒的延时，然后显示
+                    } else {
+                        a = 0
+                        $("#magic_bar").hide(300)
+                    }
+                })
+            })
+
+        </script>
+
+        <script type="text/javascript">
+            var a = 0
+            $(document).ready(function() {
+                $("#logo_img").click(function() {
+                    if (a == 0) {
+                        a = 1
+                        $(this).hide(0)
+                        $(this).css('width', '200px')
+                        $(this).css('height', '400px')
+                        $(this).show(300)
+
+                    } else {
+                        a = 0
+                        //$(this).hide(300)
+                        $(this).css('width', '60px')
+                        $(this).css('height', '60px')
+                        $(this).hide(300)
+                        $(this).show(300)
+
+                    }
+                })
+            })
+
+        </script>
+
     </head>
 
     <body>
@@ -17,6 +60,42 @@
                         welcome to my blog
                     {% endblock %}
                 </h3>
+
+                <div class='pager'>
+                    <div class="Dj">
+                        &nbsp;&nbsp;
+                        <b>{{ entryBegin}}</b>
+                        {% if noNeedDash %}
+                        {% else %}
+                            &nbsp;&ndash;&nbsp;
+                        {% endif %}
+                        <b>{{ entryEnd }}</b>
+                        &nbsp;of&nbsp;
+                        <b>{{ entryTotal }}</b>
+                    </div>
+
+                    {% if pagePrevious %}
+                        <div id="left" class="arrowButtonEn" onclick="location.href='{{ pagePrevious }}';">
+                            {# <a href="#" background-size: 100%; ></a> #}
+                        </div>
+                    {% else %}
+                        <div id="left" class="arrowButtonDis">
+                            {# <a href="#" background-size: 100%; ></a> #}
+                        </div>
+                    {% endif %}
+                    <div class="arrowButton">
+                        &nbsp;&nbsp;&nbsp;
+                    </div>
+                    {% if pageNext %}
+                        <div id="right" class="arrowButtonEn" onclick="location.href='{{ pageNext }}';">
+                            {# <a href="#" background-size: 100%; ></a> #}
+                        </div>
+                    {% else %}
+                        <div id="right" class="arrowButtonDis">
+                            {# <a href="#" background-size: 100%; ></a> #}
+                        </div>
+                    {% endif %}
+                </div>
             </header>
 
             <ul class="posts">
@@ -28,17 +107,39 @@
         </section>
 
         <header id="simple" class="bigsite">
-            <h1><a href="/">Sun <br />Run Away</a></h1>
-            <h2>Feng Liyuan </h2>
+            <h1><a href="/">Sun Run Away</a></h1>
+            <h2>Invite me when you need me, I will help. </h2>
             <ul id="user_info">
-                <li class="mail"><a href="mailto:DarkTemplar.f@gmail.com">E-mail</a></li>
-                <li class="github"><a href="https://github.com/flybird8">github</a></li>
+                <li class="Blog"><a href="/blog/page/1/">Blog</a></li>
+                <li class="About me"><a href="/aboutme/">About me</a></li>
                 <li class="rss"><a href="/feed.rss">rss feed</a></li>
             </ul>
 
             <figure id="logo_blog">
+                <a id="logo_img" style="background-image: url({{ STATIC_URL }}images/avatar.png);">Sun Run Away</a>
+                <span class="dot_pulse"></span>
             </figure>
         </header>
+
+        <nav id="service_hook">
+            <a style="background-image: url({{ STATIC_URL }}images/navigation/navigator.png); background-size: 100%; float: left;">Navigator</a>
+            <img src="{{ STATIC_URL }}images/navigation/down_arrow_tiny_white.png" />
+        </nav>
+
+        <ul id="magic_bar">
+            <li class="triangle">&nbsp;</li>
+            <li class="catch"><p>Categories</p></li>
+            <li class="photo">&nbsp;</li>
+
+                {% if allCategories %}
+                    {% for category in allCategories %}
+                        <li class='category'><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+                    {% endfor %}
+                {% else %}
+                    <li class='category'>There is no category</li>
+                {% endif %}
+
+        </ul>
 
 
     </body>

@@ -2,7 +2,7 @@ from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('',
     url(r'^$', 'blog.views.index'),
-    url(r'^page/(?P<page>\d+)/$', 'blog.views.index'),
+    url(r'^blog/page/(?P<page>\d+)/$', 'blog.views.index', name='view_blog_page'),
 
     url(
         r'^blog/view/(?P<slug>.+)/$',
@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(
         r'^blog/category/(?P<slug>.+)/page/(?P<page>\d+)/$',
         'blog.views.view_category',
+        name='view_blog_category_page'
     ),
     url(
         r'^blog/category/(?P<slug>.+)/$',
@@ -23,7 +24,9 @@ urlpatterns = patterns('',
 )
 
 import settings
+import os
 
-urlpatterns += patterns('',
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-)
+if 'DATABASE_URL' in os.environ:
+    urlpatterns += patterns('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    )

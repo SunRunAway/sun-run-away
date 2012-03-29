@@ -1,9 +1,0 @@
-TODO list:
-
-    category: //翻页
-    post    ： //显示它的category
-    首页     : category 位置
-                //排序按id
-
-    issues:
-        postNext = Blog.objects.filter(id__gt=post.id)[0] 后会get两次

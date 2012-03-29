@@ -10,7 +10,7 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 ::-moz-selection { background: #777777; color: #fff; text-shadow: none; }
 ::selection { background: #777777; color: #fff; text-shadow: none; }
 
-a { color: #00e; } 
+a { color: #00e; }
 a:visited { color: #551a8b; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
@@ -96,7 +96,7 @@ a.anchor:visited {
 }
 
 header#simple {
-	width: 240px;
+	width: 300px;
 	position: absolute;
 	left: 10px;
 	top: 0px;
@@ -128,20 +128,20 @@ section#conductor {
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	left: 250px;
+	left: 310px;
 }
 
 header#simple h1 {
 	width: 250px;
 	margin: 0 auto;
 	padding-top: 150px;
-	padding-left: 30px;
+	/*padding-left: 30px;*/
 }
 
 header#simple h1 a {
 	font-family: "freight-sans-pro", sans-serif;
 	font-weight: 900;
-	font-size: 38px;
+	font-size: 33px;
 	line-height: 60px;
 	border: none;
 }
@@ -180,7 +180,7 @@ header#simple h3 a {
 ul#user_info {
 	position: relative;
 	left: 30px;
-	top: 50px;	
+	top: 50px;
 }
 
 ul#user_info li {
@@ -212,8 +212,7 @@ ul#user_info li a:hover {
 section#conductor header {
 	display: block;
 	border-bottom: 1px solid #e2e2e2;
-	padding: 40px;
-	padding-left: 50px;	
+	padding: 40px 40px 90px 50px;
 }
 
 h3.date {
@@ -224,6 +223,7 @@ h3.date {
 	letter-spacing: 1px;
 	padding-left: 0px;
 	line-height: 33px;
+	float: left;
 }
 
 ul.posts {
@@ -247,7 +247,7 @@ ul.posts li article {
 	margin-top: 0px;
 	padding-right: 0px;
 	padding: 40px;
-	padding-left: 50px;	
+	padding-left: 50px;
 }
 
 
@@ -392,8 +392,8 @@ figure.hover_select {
 }
 
 figure.hover_select.poke {
-	 position: relative; 
-	 top: auto; 
+	 position: relative;
+	 top: auto;
 	 right: auto;
 	 width: 150px;
 	 height: 200px;
@@ -538,49 +538,49 @@ p.no_posts {
 
 /* animations */
 
-@-moz-keyframes hoverSelect 
-	{       
+@-moz-keyframes hoverSelect
+	{
 	0% {
-		-moz-transform: scale(0.1); 
+		-moz-transform: scale(0.1);
 	}
 	100% {
-		-moz-transform: scale(1.1);  
+		-moz-transform: scale(1.1);
 	}
 }
 
 @-webkit-keyframes hoverSelect
-	{       
+	{
 	0% {
-		-webkit-transform: scale(0.1); 
+		-webkit-transform: scale(0.1);
 	}
 	100% {
-		-webkit-transform: scale(1.1);  
+		-webkit-transform: scale(1.1);
 	}
 }
 
 @-webkit-keyframes hoverPulse
-	{       
+	{
 	0% {
-		-webkit-transform: scale(0.2); 
+		-webkit-transform: scale(0.2);
 	}
 	50% {
 		-webkit-transform: scale(0.35);
 	}
 	100% {
-		-webkit-transform: scale(0.2);  
+		-webkit-transform: scale(0.2);
 	}
 }
 
 @-moz-keyframes hoverPulse
-	{       
+	{
 	0% {
-		-moz-transform: scale(0.2); 
+		-moz-transform: scale(0.2);
 	}
 	50% {
 		-moz-transform: scale(0.35);
 	}
 	100% {
-		-moz-transform: scale(0.2);  
+		-moz-transform: scale(0.2);
 	}
 }
 
@@ -634,7 +634,7 @@ div.notification p strong {
 }
 
 nav.pagination span {
-	display:none; 
+	display:none;
 }
 
 nav.pagination span a{
@@ -793,8 +793,8 @@ header#simple h1#master_logo {
 
 
 @-webkit-keyframes pulsationHover
-	{       
-	0% {	
+	{
+	0% {
 		width: 8px;
 		height: 8px;
 		margin-top: -4px;
@@ -811,8 +811,8 @@ header#simple h1#master_logo {
 }
 
 @-moz-keyframes pulsationHover
-	{       
-	0% {	
+	{
+	0% {
 		width: 8px;
 		height: 8px;
 		margin-top: -4px;
@@ -847,11 +847,11 @@ header#simple figure#logo_blog {
 	color: #000;
 
 	-webkit-transition-property: all;
-	-webkit-transition-duration: 0.7s;  
+	-webkit-transition-duration: 0.7s;
 	-webkit-transition-timing-function: ease-in-out;
 
 	-moz-transition-property: all;
-	-moz-transition-duration: 0.7s;  
+	-moz-transition-duration: 0.7s;
 	-moz-transition-timing-function: ease-in-out;
 }
 
@@ -860,7 +860,7 @@ header#simple figure#logo_blog.start {
 }
 
 
-header#simple figure#logo_blog a {
+header#simple figure a {
 	display: block;
 	position: relative;
 	text-indent: -9999px;
@@ -881,6 +881,7 @@ header#simple figure#logo_blog a {
 
 
 
+
 span.dot_pulse {
 	position: absolute;
 	left: -5px;
@@ -890,7 +891,7 @@ span.dot_pulse {
 	width: 90px;
 	height: 90px;
 	z-index: 10;
-	background-color: transparent;
+	background-color:transparent;
 	border: 10px solid #FF8E1E;
 
 	-webkit-animation-name: dotPulse;
@@ -908,19 +909,19 @@ span.dot_pulse {
 
 
 
-/* 
+/*
     This animation inspired by Panic's awesome, amazing Transmit features page:
     http://www.panic.com/transmit/
 */
 
 @-webkit-keyframes 'dotPulse'
-	{       
+	{
 	0% {
-		-webkit-transform: scale(0);   
+		-webkit-transform: scale(0);
 		opacity: 0;
 	}
 	10% {
-		-webkit-transform: scale(0.3);   
+		-webkit-transform: scale(0.3);
 		opacity: 0;
 	}
 	30% {
@@ -934,13 +935,13 @@ span.dot_pulse {
 }
 
 @-moz-keyframes dotPulse
-	{       
+	{
 	0% {
-		-moz-transform: scale(0);   
+		-moz-transform: scale(0);
 		opacity: 0;
 	}
 	10% {
-		-moz-transform: scale(0.3);   
+		-moz-transform: scale(0.3);
 		opacity: 0.2;
 	}
 	30% {
@@ -981,6 +982,11 @@ nav#service_hook a {
 	border: none;
 }
 
+nav#service_hook img {
+	margin-left: 4px;
+    margin-top: 18px;
+}
+
 
 ul#magic_bar {
 	border: 1px solid #a9a9a9;
@@ -1008,7 +1014,7 @@ ul#magic_bar li a {
 	padding-left: 55px;
 	text-decoration: none;
 
-	background: url(/images/navigation/circle.png) 15px 14px no-repeat;
+	background: url(/static/images/navigation/circle.png) 15px 14px no-repeat;
 }
 
 ul#magic_bar li.catch p {
@@ -1018,32 +1024,14 @@ ul#magic_bar li.catch p {
 	border-bottom: 1px solid #dfdfdf;
 	padding: 25px;
 	padding-left: 15px;
-	font-size: 35px;
+	font-size: 27px;
 	font-weight: 900;
 	color: #000;
 }
 
 
-ul#magic_bar li.dashboard a {
-	background-image: url(/images/navigation/dashboard.png);
-}
-
-ul#magic_bar li.logout a,
-ul#magic_bar li.login a {
-	background-image: url(/images/navigation/logout.png);
-}
-
-ul#magic_bar li.settings a {
-	background-image: url(/images/navigation/settings.png);
-}
-
-ul#magic_bar li.blog a {
-	background-image: url(/images/navigation/blog.png);
-}
-
-ul#magic_bar li.write a,
-ul#magic_bar li.signup a {
-	background-image: url(/images/navigation/write.png);
+ul#magic_bar li.category a {
+	background-image: url(/static/images/navigation/circle.png);
 }
 
 ul#magic_bar li a:hover {
@@ -1060,7 +1048,7 @@ ul#magic_bar li {
 }
 
 ul#magic_bar li.triangle {
-		background: transparent url(/images/navigation/triangle.png) top right no-repeat;
+		background: transparent url(/static/images/navigation/triangle.png) top right no-repeat;
 		margin-top: -14px;
 		margin-right: 25px;
 }
@@ -1080,7 +1068,7 @@ ul#magic_bar li.photo {
 	margin-bottom: 5px;
 	display: block;
 	box-shadow: inset 0px 0px 10px #000;
-	background: #444 url(/images/navigation/chemist.png) -150px -30px no-repeat;
+	background: #444 url(/static/images/navigation/chemist.png) -150px -30px no-repeat;
 	height: 70px;
 }
 
@@ -1090,26 +1078,6 @@ li.padded {
 	padding-left: 50px;
 	padding-right: 50px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 a.buttonize:hover {
 	color: #fff;
@@ -1134,11 +1102,11 @@ aside#network_blog {
 	display: none;
 
 	-webkit-transition-property: all;
-	-webkit-transition-duration: 1s;  
+	-webkit-transition-duration: 1s;
 	-webkit-transition-timing-function: ease-in-out;
 
 	-moz-transition-property: all;
-	-moz-transition-duration: 1s;  
+	-moz-transition-duration: 1s;
 	-moz-transition-timing-function: ease-in-out;
 }
 
@@ -1154,11 +1122,11 @@ div.identify {
 	top: 0px;
 	z-index: 999999;
 	-webkit-transition-property: all;
-	-webkit-transition-duration: 0.7s;  
+	-webkit-transition-duration: 0.7s;
 	-webkit-transition-timing-function: ease-in-out;
 
 	-moz-transition-property: all;
-	-moz-transition-duration: 1s;  
+	-moz-transition-duration: 1s;
 	-moz-transition-timing-function: ease-in-out;
 }
 
@@ -1225,3 +1193,57 @@ aside#network_blog h4 {
 
 
 */
+div.pager {
+    position: absolute;
+    right: 200px;
+    top:53px;
+}
+div.Dj {
+	margin-top: 8px;
+	float: left;
+}
+div#left.arrowButtonEn {
+ 	height:0;
+	width:0;
+ 	border-width:15px;
+ 	border-style:solid;
+ 	border-color:#fff #000 #fff #fff;
+ 	overflow:hidden;
+ 	cursor:pointer;
+ 	float: left;
+}
+
+div#left.arrowButtonDis {
+ 	height:0;
+	width:0;
+ 	border-width:15px;
+ 	border-style:solid;
+ 	border-color:#fff #ccc #fff #fff;
+ 	overflow:hidden;
+ 	float: left;
+}
+
+div#right.arrowButtonEn {
+ 	height:0;
+	width:0;
+ 	border-width:15px;
+ 	border-style:solid;
+ 	border-color:#fff #fff #fff #000;
+ 	overflow:hidden;
+ 	cursor:pointer;
+ 	float: left;
+}
+
+div#right.arrowButtonDis {
+ 	height:0;
+	width:0;
+ 	border-width:15px;
+ 	border-style:solid;
+ 	border-color:#fff #fff #fff #ccc;
+ 	overflow:hidden;
+ 	float: left;
+}
+
+div.arrowButton {
+ 	float: left;
+}

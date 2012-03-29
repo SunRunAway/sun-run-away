@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block banner %}
-    {{ nowDate }}
+    今天是 {{ nowDate }}
 {% endblock %}
 
 {% block content %}
@@ -19,35 +19,12 @@
             </li>
         {% endfor %}
     {% else %}
-        <li class='post'>There is no post</li>
+        <li class='post'><article><p>There is no post<p></article></li>
     {% endif %}
 {% endblock %}
 
 
-{% block footer %}
-    <li class='padded'>
-        Pages:
-        {% for i in pageRange %}
-            {% ifequal forloop.counter pageNum %}
-                {{ forloop.counter }}
-            {% else %}
-                <a href="/page/{{ forloop.counter }}/">{{ forloop.counter }}</a>
-            {% endifequal %}
-        {% endfor %}
-    </li>
-{% endblock %}
 
 
-<!-- 不知道放哪里了。。。
 
-    {% if categories %}
-        <ul>
-            {% for category in categories %}
-                <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>There is no category</p>
-    {% endif %}
 
--->

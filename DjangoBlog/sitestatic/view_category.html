@@ -10,16 +10,6 @@
 
 {% block footer %}
     <li class='padded'>
-        Pages:
-        {% for i in pageRange %}
-            {% ifequal forloop.counter pageNum %}
-                {{ forloop.counter }}
-            {% else %}
-                <a href="{{ category.get_absolute_url }}page/{{ forloop.counter }}/">{{ forloop.counter }}</a>
-            {% endifequal %}
-        {% endfor %}
-    </li>
-    <li class='padded'>
-        <a href="/">Homepage</a>
+        <a class="buttonize square" href="/">Homepage</a>
     </li>
 {% endblock %}

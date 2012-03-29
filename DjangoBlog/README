@@ -1,0 +1,20 @@
+TODO list:
+
+    category: //翻页
+    post    ： //显示它的category
+                评论功能
+    首页     : //category 位置
+                //排序按id
+
+    日期显示格式
+
+    左栏 :
+            about me
+            RSS
+
+    导航栏：
+            //类似gmail的全局翻页功能
+            往下滚轮固定
+
+    issues:
+        //postNext = Blog.objects.filter(id__gt=post.id)[0] 后会get两次
