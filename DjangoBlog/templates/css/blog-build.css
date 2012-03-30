@@ -1214,57 +1214,94 @@ div.Dj {
 	float: left;
 }
 div#left.arrowButtonEn {
- 	height:0;
-	width:0;
- 	border-width:15px;
- 	border-style:solid;
- 	border-color:#fff #000 #fff #fff;
- 	overflow:hidden;
-
  	cursor:pointer;
  	float: left;
- 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 div#left.arrowButtonDis {
- 	height:0;
-	width:0;
- 	border-width:15px;
- 	border-style:solid;
- 	border-color:#fff #ccc #fff #fff;
- 	overflow:hidden;
-
  	float: left;
- 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 div#right.arrowButtonEn {
- 	height:0;
-	width:0;
- 	border-width:15px;
- 	border-style:solid;
- 	border-color:#fff #fff #fff #000;
- 	overflow:hidden;
-
  	cursor:pointer;
  	float: left;
- 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 div#right.arrowButtonDis {
- 	height:0;
-	width:0;
- 	border-width:15px;
- 	border-style:solid;
- 	border-color:#fff #fff #fff #ccc;
- 	overflow:hidden;
-
  	float: left;
- 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 div.arrowButton {
  	float: left;
+}
+
+.pre-wrap {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #999999;
+    border-radius: 4px;
+    position: left;
+}
+.pre-wrap#enable:hover {
+	box-shadow: 0 1px #999999 inset, 0 1px 3px #221919;
+}
+#left .pre {
+    height: 28px;
+    position: relative;
+    right: 9px;
+    width: 28px;
+}
+#left .pre1#disable{
+    border-width: 15px;
+    border-color: transparent #999999 transparent transparent;
+    /*****设置border-style:dashed;使ie6支持border透明*****/
+    border-style: dashed solid dashed dashed;
+}
+#left .pre1#enable{
+    border-width: 15px;
+    border-color: transparent #000000 transparent transparent;
+    border-style: dashed solid dashed dashed;
+}
+#left .pre2 {
+    border-width: 15px;
+    border-color: transparent #FFF transparent transparent;
+    position: relative;
+    top: -30px;
+    left: 6px;
+    border-style: dashed solid dashed dashed;
+}
+#right .pre {
+    height: 28px;
+    position: relative;
+    left: 9px;
+    width: 28px;
+}
+#right .pre1#disable{
+    border-width: 15px;
+    border-color: transparent transparent transparent #999999;
+    border-style: dashed dashed dashed solid;
+}
+#right .pre1#enable{
+    border-width: 15px;
+    border-color: transparent transparent transparent #000000;
+    border-style: dashed dashed dashed solid;
+}
+#right .pre2 {
+    border-width: 15px;
+    border-color: transparent transparent transparent #FFF;
+    position: relative;
+    top: -30px;
+    right: 6px;
+    border-style: dashed dashed dashed solid;
+}
+.pre1, .pre2 {
+    width: 0;
+    height: 0;
+    /*****去掉ie6下默认高度，设置以下属性*****/
+    line-height: 0;
+    font-size: 0;
+	overflow: hidden;
+
 }
 
 #dsq-content .dsq-post-tools li.dsq-post-as {
