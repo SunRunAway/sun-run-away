@@ -244,7 +244,7 @@ ul.posts {
 	top: 135px;
 }
 
-ul.posts li {
+ul.posts li.post {
 	display: block;
 	border-bottom: 1px solid #e2e2e2;
 	position: relative;
@@ -1270,4 +1270,7 @@ div.arrowButton {
 #dsq-content .dsq-post-tools li.dsq-post-as {
     float: none;
     top: -6px;
+}
+#dsq-pagination {
+	display: none;
 }
