@@ -218,6 +218,7 @@ section#conductor header {
 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 	left: 300;
 	right: 0;
+	height: 90px;
 	position: fixed;
 	z-index: 999;
 }
@@ -228,7 +229,8 @@ h3.date {
 	font-weight: 700;
 	font-size: 14px;
 	letter-spacing: 1px;
-	padding-left: 0px;
+	padding-left: 50px;
+    padding-top: 25px;
 	line-height: 33px;
 	float: left;
 	padding: 40px;
@@ -968,7 +970,7 @@ span.dot_pulse {
 
 nav#service_hook {
 	position: fixed;
-	top: 50px;
+	top: 35px;
 	right: 50px;
 	border-radius: 4px;
 	display: block;
@@ -1207,7 +1209,7 @@ aside#network_blog h4 {
 div.pager {
     position: fixed;
     right: 200px;
-    top:53px;
+    top:40px;
 }
 div.Dj {
 	margin-top: 8px;
