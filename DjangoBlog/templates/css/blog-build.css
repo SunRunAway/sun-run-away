@@ -1268,9 +1268,9 @@ div.arrowButton {
 }
 
 #dsq-content .dsq-post-tools li{
-	float: none;
+	float: none !important;
 }
 
 .dsq-post-tools .dsq-post-as .dsq-button{
-	top: -6px;
+	top: -6px !important;
 }
