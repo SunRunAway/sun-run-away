@@ -1266,3 +1266,11 @@ div#right.arrowButtonDis {
 div.arrowButton {
  	float: left;
 }
+
+#dsq-content .dsq-post-tools li{
+	float: none;
+}
+
+.dsq-post-tools .dsq-post-as .dsq-button{
+	top: -6px;
+}

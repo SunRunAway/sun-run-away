@@ -11,14 +11,14 @@
         <script type="text/javascript">
 
             $(document).ready(function() {                   //相当于绑定load事件
-                var a = 0
+                var a = 0;
                 $("#service_hook").click(function() {        //mouseover事件
                     if (a == 0) {
-                        a = 1
-                        $("#magic_bar").show(300)               //可加上1秒的延时，然后显示
+                        a = 1;
+                        $("#magic_bar").show(300);              //可加上1秒的延时，然后显示
                     } else {
-                        a = 0
-                        $("#magic_bar").hide(300)
+                        a = 0;
+                        $("#magic_bar").hide(300);
                     }
                 })
             })
@@ -28,22 +28,22 @@
         <script type="text/javascript">
 
             $(document).ready(function() {
-                var a = 0
+                var a = 0;
                 $("#logo_img").click(function() {
                     if (a == 0) {
-                        a = 1
-                        $(this).hide(0)
-                        $(this).css('width', '200px')
-                        $(this).css('height', '400px')
-                        $(this).show(300)
+                        a = 1;
+                        $(this).hide(0);
+                        $(this).css('width', '200px');
+                        $(this).css('height', '400px');
+                        $(this).show(300);
 
                     } else {
-                        a = 0
-                        //$(this).hide(300)
-                        $(this).css('width', '60px')
-                        $(this).css('height', '60px')
-                        $(this).hide(300)
-                        $(this).show(300)
+                        a = 0;
+                        $(this).hide(0);
+                        $(this).css('width', '60px');
+                        $(this).css('height', '60px');
+//                        $(this).hide(300)
+                        $(this).show(300);
 
                     }
                 })
