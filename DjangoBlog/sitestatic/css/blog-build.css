@@ -1003,7 +1003,7 @@ ul#magic_bar {
 	border: 1px solid #a9a9a9;
 	border-radius: 5px;
 	background-color: #fff;
-	position: absolute;
+	position: fixed;
 	top: 110px;
 	right: 40px;
 	width: 250px;
