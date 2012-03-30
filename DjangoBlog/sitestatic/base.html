@@ -77,12 +77,24 @@
                     </div>
 
                     {% if pagePrevious %}
+
+
                         <div id="left" class="arrowButtonEn" onclick="location.href='{{ pagePrevious }}';">
-                            {# <a href="#" background-size: 100%; ></a> #}
+                            <div class="pre-wrap" id="enable">
+                                    <div class="pre" id="left">
+                                         <div class="pre1" id="enable"></div>
+                                         <div class="pre2"></div>
+                                    </div>
+                            </div>
                         </div>
                     {% else %}
                         <div id="left" class="arrowButtonDis">
-                            {# <a href="#" background-size: 100%; ></a> #}
+                            <div class="pre-wrap" id="disable">
+                                    <div class="pre" id="left">
+                                         <div class="pre1" id="disable"></div>
+                                         <div class="pre2"></div>
+                                    </div>
+                            </div>
                         </div>
                     {% endif %}
                     <div class="arrowButton">
@@ -90,11 +102,21 @@
                     </div>
                     {% if pageNext %}
                         <div id="right" class="arrowButtonEn" onclick="location.href='{{ pageNext }}';">
-                            {# <a href="#" background-size: 100%; ></a> #}
+                            <div class="pre-wrap" id="enable">
+                                    <div class="pre" id="right">
+                                         <div class="pre1" id="enable"></div>
+                                         <div class="pre2"></div>
+                                    </div>
+                            </div>
                         </div>
                     {% else %}
                         <div id="right" class="arrowButtonDis">
-                            {# <a href="#" background-size: 100%; ></a> #}
+                            <div class="pre-wrap" id="disable">
+                                    <div class="pre" id="right">
+                                         <div class="pre1" id="disable"></div>
+                                         <div class="pre2"></div>
+                                    </div>
+                            </div>
                         </div>
                     {% endif %}
                 </div>
