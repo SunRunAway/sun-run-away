@@ -14,7 +14,7 @@ TODO list:
 
     导航栏：
             //类似gmail的全局翻页功能
-            往下滚轮固定
+            //往下滚轮固定
 
     issues:
         //postNext = Blog.objects.filter(id__gt=post.id)[0] 后会get两次

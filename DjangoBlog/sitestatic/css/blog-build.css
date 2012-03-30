@@ -868,7 +868,6 @@ header#simple figure#logo_blog.start {
 	top: -200px;
 }
 
-
 header#simple figure a {
 	display: block;
 	position: relative;
@@ -886,6 +885,8 @@ header#simple figure a {
 	background-color: #000;
 	background-position: center center;
 	background-repeat: no-repeat;
+
+	cursor:pointer;
 }
 
 
@@ -976,6 +977,7 @@ nav#service_hook {
 	background: #000 url(/images/misc/down_arrow_tiny_white.png) 37px 50% no-repeat;
 	z-index: 9999;
 	display: block;
+	cursor:pointer;
 }
 
 nav#service_hook a {
@@ -1218,8 +1220,10 @@ div#left.arrowButtonEn {
  	border-style:solid;
  	border-color:#fff #000 #fff #fff;
  	overflow:hidden;
+
  	cursor:pointer;
  	float: left;
+ 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 div#left.arrowButtonDis {
@@ -1229,7 +1233,9 @@ div#left.arrowButtonDis {
  	border-style:solid;
  	border-color:#fff #ccc #fff #fff;
  	overflow:hidden;
+
  	float: left;
+ 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 div#right.arrowButtonEn {
@@ -1239,8 +1245,10 @@ div#right.arrowButtonEn {
  	border-style:solid;
  	border-color:#fff #fff #fff #000;
  	overflow:hidden;
+
  	cursor:pointer;
  	float: left;
+ 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 div#right.arrowButtonDis {
@@ -1250,7 +1258,9 @@ div#right.arrowButtonDis {
  	border-style:solid;
  	border-color:#fff #fff #fff #ccc;
  	overflow:hidden;
+
  	float: left;
+ 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
 div.arrowButton {
