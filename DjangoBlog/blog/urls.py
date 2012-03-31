@@ -23,6 +23,13 @@ urlpatterns = patterns('',
 
 )
 
+# for RSS
+from blog.feeds import LastEntriesFeeds
+urlpatterns += patterns('',
+    url(r'^feeds.rss', LastEntriesFeeds()),
+)
+
+# for heroku
 import settings
 import os
 
