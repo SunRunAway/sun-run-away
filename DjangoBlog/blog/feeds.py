@@ -11,7 +11,7 @@ class LastEntriesFeeds(Feed):
 
     title = "Sun Run Away"
     link = "/"
-    description = "Get rss feeds from my blog"
+    description = "Invite me when you need me, I will help."
 
     def items(self):
         return Blog.objects.all()[:20]
