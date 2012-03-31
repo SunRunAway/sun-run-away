@@ -975,7 +975,7 @@ nav#service_hook {
 	display: block;
 	width: 60px;
 	height: 40px;
-	background: #000 url(/images/misc/down_arrow_tiny_white.png) 37px 50% no-repeat;
+	background: #000 url(/static/images/navigation/down_arrow_tiny_white.png) 80% 50% no-repeat;
 	z-index: 9999;
 	display: block;
 	cursor:pointer;

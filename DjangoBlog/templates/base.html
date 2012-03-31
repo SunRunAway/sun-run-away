@@ -31,23 +31,22 @@
                 var a = 0;
                 $("#logo_img").click(function() {
                     if (a == 0) {
-                        a = 1;
-                        $(this).hide(0);
-                        $(this).css('width', '200px');
-                        $(this).css('height', '400px');
-                        $(this).show(300);
-
+                        $(this).animate({
+                            width: '200px',
+                            height: '400px'
+                        }, 300, function () {
+                            a = 1;
+                        });
                     } else {
-                        a = 0;
-                        $(this).hide(0);
-                        $(this).css('width', '60px');
-                        $(this).css('height', '60px');
-//                        $(this).hide(300)
-                        $(this).show(300);
-
+                        $(this).animate({
+                            width: '60px',
+                            height: '60px'
+                        }, 300, function () {
+                            a = 0;
+                        });
                     }
-                })
-            })
+                });
+            });
 
         </script>
     </head>
@@ -147,7 +146,6 @@
 
         <nav id="service_hook">
             <a style="background-image: url({{ STATIC_URL }}images/navigation/navigator.png); background-size: 100%; float: left;">Navigator</a>
-            <img src="{{ STATIC_URL }}images/navigation/down_arrow_tiny_white.png" />
         </nav>
 
         <ul id="magic_bar">
