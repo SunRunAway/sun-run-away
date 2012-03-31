@@ -11,3 +11,6 @@ class LastEntriesFeeds(Feed):
 
     def item_title(self, item):
         return item.title
+
+    def item_description(self, item):
+        return item.body[:20]
