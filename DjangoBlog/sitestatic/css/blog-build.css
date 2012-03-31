@@ -216,7 +216,7 @@ section#conductor header {
 	border-bottom: 1px solid #e2e2e2;
 	background-color: #ffffff;
 	box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
-	left: 300;
+	left: 300px;
 	right: 0;
 	height: 90px;
 	position: fixed;
