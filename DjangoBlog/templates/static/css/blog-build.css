@@ -1214,21 +1214,21 @@ div.Dj {
 	margin-top: 8px;
 	float: left;
 }
-div#left.arrowButtonEn {
+div#leftlink.arrowButtonEn {
  	cursor:pointer;
  	float: left;
 }
 
-div#left.arrowButtonDis {
+div#leftlink.arrowButtonDis {
  	float: left;
 }
 
-div#right.arrowButtonEn {
+div#rightlink.arrowButtonEn {
  	cursor:pointer;
  	float: left;
 }
 
-div#right.arrowButtonDis {
+div#rightlink.arrowButtonDis {
  	float: left;
 }
 
@@ -1246,7 +1246,7 @@ div.arrowButton {
 .pre-wrap#enable:hover {
 	box-shadow: 0 1px #999999 inset, 0 1px 3px #221919;
 }
-#left .pre {
+#leftlink div.pre {
     height: 28px;
     position: relative;
     right: 9px;
@@ -1271,7 +1271,7 @@ div.arrowButton {
     left: 6px;
     border-style: dashed solid dashed dashed;
 }
-#right .pre {
+#rightlink div.pre {
     height: 28px;
     position: relative;
     left: 9px;
