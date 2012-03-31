@@ -3,6 +3,12 @@ from blog.models import Blog, Category
 
 
 class LastEntriesFeeds(Feed):
+
+    def __call__(self, request, *args, **kwargs):
+        response = super(LastEntriesFeeds, self).__call__(request, *args, **kwargs)
+        response['Content-Type'] = "application/rss+xml; charset=utf-8"
+        return response
+
     title = "Sun Run Away"
     link = "/"
     description = "Get rss feeds from my blog"
