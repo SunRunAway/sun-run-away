@@ -17,7 +17,7 @@ urlpatterns = patterns('',
 
     url(r'^blog/', include('DjangoBlog.blog.urls')),
 
-    url(r'', include('django.contrib.flatpages.urls')),
+    #url(r'', include('django.contrib.flatpages.urls')),
 )
 
 # for about me
