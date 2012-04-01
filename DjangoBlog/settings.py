@@ -103,6 +103,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
@@ -138,6 +139,7 @@ INSTALLED_APPS = (
     'DjangoBlog.blog',
     'gunicorn' if 'DATABASE_URL' in os.environ else 'DjangoBlog.blog',
 
+    'django.contrib.redirects',
     'django.contrib.flatpages',
 )
 

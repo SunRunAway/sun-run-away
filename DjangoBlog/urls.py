@@ -36,5 +36,5 @@ if 'DATABASE_URL' in os.environ:
 
 # for flatpages
 urlpatterns += patterns('',
-    url(r'', include('django.contrib.flatpages.urls')),
+    #url(r'', include('django.contrib.flatpages.urls')),
 )
