@@ -125,23 +125,41 @@ TEMPLATE_DIRS = (
 # )
 
 import os
-INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-    'DjangoBlog.blog',
+if 'DATABASE_URL' in os.environ:
+    INSTALLED_APPS = (
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.sites',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        # Uncomment the next line to enable the admin:
+        'django.contrib.admin',
+        # Uncomment the next line to enable admin documentation:
+        # 'django.contrib.admindocs',
+        'DjangoBlog.blog',
 
-    'django.contrib.redirects',
-    'django.contrib.flatpages',
-    'gunicorn' if 'DATABASE_URL' in os.environ else 'DjangoBlog.blog',
-)
+        'django.contrib.redirects',
+        'django.contrib.flatpages',
+        'gunicorn',
+    )
+else:
+    INSTALLED_APPS = (
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.sites',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        # Uncomment the next line to enable the admin:
+        'django.contrib.admin',
+        # Uncomment the next line to enable admin documentation:
+        # 'django.contrib.admindocs',
+        'DjangoBlog.blog',
+
+        'django.contrib.redirects',
+        'django.contrib.flatpages',
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
