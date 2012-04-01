@@ -17,12 +17,12 @@ urlpatterns = patterns('',
 
     url(r'^blog/', include('DjangoBlog.blog.urls')),
 
-
+    url(r'', include('django.contrib.flatpages.urls')),
 )
 
 # for about me
 urlpatterns += patterns('',
-    url(r'^aboutme/$', 'DjangoBlog.views.aboutme')
+    url(r'^aboutme/$', 'DjangoBlog.views.aboutme'),
 )
 
 # for heroku
