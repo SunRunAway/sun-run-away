@@ -3,7 +3,7 @@ import os
 
 DEBUG = True
 if 'DATABASE_URL' in os.environ:
-    DEBUG = False
+    DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
