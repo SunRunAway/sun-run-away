@@ -102,6 +102,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'DjangoBlog.urls'
@@ -126,7 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
@@ -135,6 +137,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'DjangoBlog.blog',
     'gunicorn' if 'DATABASE_URL' in os.environ else 'DjangoBlog.blog',
+
+    'django.contrib.flatpages',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -160,6 +164,7 @@ LOGGING = {
     }
 }
 
+# for heroku
 import sys
 import urlparse
 

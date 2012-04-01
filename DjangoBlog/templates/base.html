@@ -62,6 +62,7 @@
                     {% endblock %}
                 </h3>
 
+                {% block pager %}
                 <div class='pager'>
                     <div class="Dj">
                         &nbsp;&nbsp;
@@ -120,6 +121,7 @@
                         </div>
                     {% endif %}
                 </div>
+                {% endblock %}
             </header>
 
             <ul class="posts">
@@ -145,6 +147,7 @@
             </figure>
         </header>
 
+        {% block navigator %}
         <nav id="service_hook">
             <a style="background-image: url({{ STATIC_URL }}images/navigation/navigator.png); background-size: 100%; float: left;">Navigator</a>
         </nav>
@@ -163,7 +166,7 @@
                 {% endif %}
 
         </ul>
-
+        {% endblock %}
 
     </body>
 </html>

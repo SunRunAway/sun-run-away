@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 
 {% block head_title %}
-    About me
+    {{ flatpage.title }}
 {% endblock %}
 
 {% block pager %}
 {% endblock %}
+{% block navigator %}
+{% endblock %}
+
 
 {% block content %}
         <li class='post'>
             <article>
-                <h2><a class='no-link' href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-                <p>{{ post.body|safe }}</p>
+                <h2><a class='no-link' href="/about-me/">{{ flatpage.title }}</a></h2>
+                <p>{{ flatpage.content }}</p>
             </article>
         </li>
+
 {% endblock %}
 
 
 {% block footer %}
+    <li class='padded'>
 
+    </li>
     <li class='padded'>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
