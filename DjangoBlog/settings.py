@@ -137,10 +137,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'DjangoBlog.blog',
-    'gunicorn' if 'DATABASE_URL' in os.environ else 'DjangoBlog.blog',
 
     'django.contrib.redirects',
     'django.contrib.flatpages',
+    'gunicorn' if 'DATABASE_URL' in os.environ else 'DjangoBlog.blog',
 )
 
 # A sample logging configuration. The only tangible logging
