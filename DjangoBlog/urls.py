@@ -15,5 +15,21 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^', include('DjangoBlog.blog.urls')),
+    url(r'^blog/', include('DjangoBlog.blog.urls')),
+
+
 )
+
+# for about me
+urlpatterns += patterns('',
+    url(r'^aboutme/$', 'views.aboutme')
+)
+
+# for heroku
+import settings
+import os
+
+if 'DATABASE_URL' in os.environ:
+    urlpatterns += patterns('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    )
