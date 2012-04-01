@@ -17,7 +17,6 @@ urlpatterns = patterns('',
 
     url(r'^blog/', include('DjangoBlog.blog.urls')),
 
-    #url(r'', include('django.contrib.flatpages.urls')),
 )
 
 # for about me
@@ -33,3 +32,9 @@ if 'DATABASE_URL' in os.environ:
     urlpatterns += patterns('',
         (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     )
+
+
+# for flatpages
+urlpatterns += patterns('',
+    url(r'', include('django.contrib.flatpages.urls')),
+)
