@@ -5,9 +5,16 @@ if 'DATABASE_URL' in os.environ:
     TEMPLATE_DEBUG = False
     SITE_ID = 3
 
-    INSTALLED_APPS += (
-        'gunicorn',
-    )
+INSTALLED_APPS += (
+    'gunicorn',
+    'djcelery',
+    'djkombu',
+)
+
+import djcelery
+djcelery.setup_loader()
+BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
+CELERY_RESULT_DBURI = DATABASES['default']
 
 
 # for heroku

@@ -2,3 +2,5 @@ venv
 *.pyc
 .directory
 .swp
+celerybeat-schedule
+celerybeat-schedule.db
