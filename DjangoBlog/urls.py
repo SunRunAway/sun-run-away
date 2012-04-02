@@ -19,10 +19,6 @@ urlpatterns = patterns('',
 
 )
 
-# for about me
-urlpatterns += patterns('',
-    url(r'^aboutme/$', 'DjangoBlog.views.aboutme'),
-)
 
 # for heroku
 import settings
