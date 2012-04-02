@@ -3,7 +3,7 @@ import os
 
 DEBUG = True
 if 'DATABASE_URL' in os.environ:
-    DEBUG = True
+    DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -37,6 +37,8 @@ TIME_ZONE = 'Asia/Shanghai'
 LANGUAGE_CODE = 'zh-cn'
 
 SITE_ID = 1
+if 'DATABASE_URL' in os.environ:
+    SITE_ID = 2
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
