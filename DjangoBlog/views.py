@@ -1,8 +1,8 @@
 from django.http import HttpResponse
-from django.contrib.sites.models import Site
+# from django.contrib.sites.models import Site
 
-current_site = Site.objects.get_current()
-current_site.domain
+# current_site = Site.objects.get_current()
+# current_site.domain
 
 
 def displayMeta(request):
