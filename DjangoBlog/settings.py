@@ -2,8 +2,6 @@
 import os
 
 DEBUG = True
-if 'DATABASE_URL' in os.environ:
-    DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -37,8 +35,7 @@ TIME_ZONE = 'Asia/Shanghai'
 LANGUAGE_CODE = 'zh-cn'
 
 SITE_ID = 1
-if 'DATABASE_URL' in os.environ:
-    SITE_ID = 3
+
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -117,51 +114,23 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
      os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
 )
-# TEMPLATE_CONTEXT_PROCESSORS = (
-#     'django.core.context_processors.debug',
-#     'django.core.context_processors.i18n',
-#     'django.core.context_processors.media',
-#     'django.core.context_processors.static',
-#     'django.contrib.auth.context_processors.auth',
-#     'django.contrib.messages.context_processors.messages',
-# )
 
-import os
-if 'DATABASE_URL' in os.environ:
-    INSTALLED_APPS = (
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.sites',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        # Uncomment the next line to enable the admin:
-        'django.contrib.admin',
-        # Uncomment the next line to enable admin documentation:
-        # 'django.contrib.admindocs',
-        'DjangoBlog.blog',
+INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # Uncomment the next line to enable the admin:
+    'django.contrib.admin',
+    # Uncomment the next line to enable admin documentation:
+    # 'django.contrib.admindocs',
+    'DjangoBlog.blog',
 
-        'django.contrib.redirects',
-        'django.contrib.flatpages',
-        'gunicorn',
-    )
-else:
-    INSTALLED_APPS = (
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.sites',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        # Uncomment the next line to enable the admin:
-        'django.contrib.admin',
-        # Uncomment the next line to enable admin documentation:
-        # 'django.contrib.admindocs',
-        'DjangoBlog.blog',
-
-        'django.contrib.redirects',
-        'django.contrib.flatpages',
-    )
+    'django.contrib.redirects',
+    'django.contrib.flatpages',
+)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -185,43 +154,3 @@ LOGGING = {
         },
     }
 }
-
-# for heroku
-import sys
-import urlparse
-
-# Register database schemes in URLs.
-urlparse.uses_netloc.append('postgres')
-urlparse.uses_netloc.append('mysql')
-
-try:
-
-    # Check to make sure DATABASES is set in settings.py file.
-    # If not default to {}
-
-    if 'DATABASES' not in locals():
-        DATABASES = {}
-
-    if 'DATABASE_URL' in os.environ:
-        url = urlparse.urlparse(os.environ['DATABASE_URL'])
-
-        # Ensure default database exists.
-        DATABASES['default'] = DATABASES.get('default', {})
-
-        # Update with environment configuration.
-        DATABASES['default'].update({
-            'NAME': url.path[1:],
-            'USER': url.username,
-            'PASSWORD': url.password,
-            'HOST': url.hostname,
-            'PORT': url.port,
-        })
-        if url.scheme == 'postgres':
-            DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-
-        if url.scheme == 'mysql':
-            DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
-
-
-except Exception:
-    print 'Unexpected error:', sys.exc_info()
