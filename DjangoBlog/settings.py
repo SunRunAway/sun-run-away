@@ -38,7 +38,7 @@ LANGUAGE_CODE = 'zh-cn'
 
 SITE_ID = 1
 if 'DATABASE_URL' in os.environ:
-    SITE_ID = 2
+    SITE_ID = 3
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
