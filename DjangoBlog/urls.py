@@ -17,6 +17,7 @@ urlpatterns = patterns('',
 
     url(r'^blog/', include('DjangoBlog.blog.urls')),
 
+    url(r'^META/', 'DjangoBlog.views.displayMeta'),
 )
 
 
