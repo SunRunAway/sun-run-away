@@ -16,7 +16,7 @@
             $(document).ready(function() {                   //相当于绑定load事件
                 var a = 0;
                 $("#service_hook").click(function() {        //mouseover事件
-                    if (a == 0) {
+                    if (a === 0) {
                         a = 1;
                         $("#magic_bar").show(300);              //可加上1秒的延时，然后显示
                     } else {
@@ -33,7 +33,7 @@
             $(document).ready(function() {
                 var a = 0;
                 $("#logo_img").click(function() {
-                    if (a == 0) {
+                    if (a === 0) {
                         $(this).animate({
                             width: '200px',
                             height: '400px'

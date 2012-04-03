@@ -1,6 +1,9 @@
 venv
-*.pyc
-.directory
-.swp
 celerybeat-schedule
 celerybeat-schedule.db
+
+
+*.pyc
+.directory
+*.swp
+*.kate-swp
