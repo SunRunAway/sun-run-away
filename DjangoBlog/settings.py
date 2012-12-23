@@ -30,12 +30,14 @@ if 'VCAP_SERVICES' in os.environ:
             }
         }
     SITE_ID = 3
+    DEBUG = False
+    TEMPLATE_DEBUG = DEBUG
 else:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": "dev.db",
-            "USER": "",
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "sunrunaway",
+            "USER": "root",
             "PASSWORD": "",
             "HOST": "",
             "PORT": "",
