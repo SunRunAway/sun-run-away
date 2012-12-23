@@ -1,0 +1,10 @@
+venv/
+celerybeat-schedule
+celerybeat-schedule.db
+dev.db
+
+*.pyc
+.directory
+*.swp
+*.kate-swp
+ 
