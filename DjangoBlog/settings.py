@@ -12,37 +12,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 SITE_ID = 1
-## Pull in CloudFoundry's production settings
-if 'VCAP_SERVICES' in os.environ:
-    import json
-    vcap_services = json.loads(os.environ['VCAP_SERVICES'])
-    # XXX: avoid hardcoding here
-    mysql_srv = vcap_services['mysql-5.1'][0]
-    cred = mysql_srv['credentials']
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': cred['name'],
-            'USER': cred['user'],
-            'PASSWORD': cred['password'],
-            'HOST': cred['hostname'],
-            'PORT': cred['port'],
-            }
-        }
-    SITE_ID = 3
-    DEBUG = False
-    TEMPLATE_DEBUG = DEBUG
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.mysql",
-            "NAME": "sunrunaway",
-            "USER": "root",
-            "PASSWORD": "",
-            "HOST": "",
-            "PORT": "",
-            }
-        }
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -87,8 +57,6 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'sitestatic').replace('\\', '/')
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
-
-ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -183,3 +151,36 @@ INSTALLED_APPS = (
 #         },
 #     }
 # }
+
+## Pull in CloudFoundry's production settings
+if 'VCAP_SERVICES' in os.environ:
+    import json
+    vcap_services = json.loads(os.environ['VCAP_SERVICES'])
+    # XXX: avoid hardcoding here
+    mysql_srv = vcap_services['mysql-5.1'][0]
+    cred = mysql_srv['credentials']
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': cred['name'],
+            'USER': cred['user'],
+            'PASSWORD': cred['password'],
+            'HOST': cred['hostname'],
+            'PORT': cred['port'],
+            }
+        }
+    SITE_ID = 3
+    DEBUG = False
+    TEMPLATE_DEBUG = DEBUG
+    STATIC_URL = 'http://sunrunaway.qiniudn.com/static/'
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "sunrunaway",
+            "USER": "root",
+            "PASSWORD": "",
+            "HOST": "",
+            "PORT": "",
+        }
+    }
