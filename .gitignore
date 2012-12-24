@@ -1,7 +1,6 @@
 venv
 celerybeat-schedule
 celerybeat-schedule.db
-qiniutask.txt
 
 *.pyc
 .directory
