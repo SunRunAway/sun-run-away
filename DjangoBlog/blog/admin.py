@@ -3,7 +3,7 @@ from blog.models import Blog, Category
 
 
 class BlogAdmin(admin.ModelAdmin):
-    fields = ('title', 'body', 'category')
+    fields = ('title', 'slug', 'body', 'category')
 
 
 class CategoryAdmin(admin.ModelAdmin):
