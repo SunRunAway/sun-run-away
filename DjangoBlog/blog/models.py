@@ -25,7 +25,10 @@ class Blog (models.Model):
 
     def save(self):
         #super(Blog, self).save()
-        date = datetime.date.today()
+        if self.posted:
+            date = self.posted.date()
+        else:
+            date = datetime.date.today()
         self.slug = '%i/%i/%i/%s' % (
             date.year, date.month, date.day, slugify(urlquote(self.title))
         )
