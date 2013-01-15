@@ -254,7 +254,7 @@ ul.posts li.post {
 }
 
 ul.posts li article {
-	width: 500px;
+	width: 70%;
 	margin: 0;
 	margin-top: 0px;
 	padding-right: 0px;
