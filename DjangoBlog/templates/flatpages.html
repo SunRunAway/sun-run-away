@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head_title %}
-    {{ flatpage.title }}
+    {{ block.super }} | {{ flatpage.title }}
 {% endblock %}
 
 {% block pager %}

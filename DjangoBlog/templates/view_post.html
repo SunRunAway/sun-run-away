@@ -2,7 +2,7 @@
 
 
 {% block head_title %}
-    {{ post.title }}
+    {{ block.super }} | {{ post.title }}
 {% endblock %}
 
 {% block banner %}
