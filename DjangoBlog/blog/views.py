@@ -26,10 +26,6 @@ def index(request, page='1'):
     def get_absolute_url(page):
         return ("view_blog_page", None, {"page": page})
 
-    pageURLRange = []
-    for i in range(totalPageNum):
-        pageURLRange.append(get_absolute_url(i + 1))
-    #print Blog.objects.all()[end - ARTICLES_PER_PAGE: end]
     return render_to_response('index.html', {
         'allCategories': Category.objects.all(),    # for navigation
         'nowDate': datetime.date.today(),           # for banner's date
