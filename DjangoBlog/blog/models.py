@@ -3,12 +3,13 @@ from django.db.models import permalink
 from django.template.defaultfilters import slugify
 from django.utils.http import urlquote
 import datetime
-
+import markdown
 
 # Create your models here.
 class Blog (models.Model):
     title = models.CharField(max_length=100)
     slug = models.CharField(max_length=100, unique=True)
+    body_markdown = models.TextField('Entry body', help_text='Use Markdown syntax.')
     body = models.TextField()
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
     category = models.ManyToManyField("blog.Category", null=True)
@@ -34,6 +35,9 @@ class Blog (models.Model):
         if self.slug.startswith(prefix):
             self.slug = self.slug[len(prefix):]
         self.slug = prefix + slugify(urlquote(self.slug))
+
+        if self.body_markdown:
+            self.body = markdown.markdown(self.body_markdown)
         super(Blog, self).save()
 
 
