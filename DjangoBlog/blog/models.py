@@ -32,6 +32,8 @@ class Blog (models.Model):
         prefix = '%i/%i/%i/' % (
             date.year, date.month, date.day
         )
+        if not self.slug:
+            self.slug = unicode(self.title)
         if self.slug.startswith(prefix):
             self.slug = self.slug[len(prefix):]
         self.slug = prefix + slugify(urlquote(self.slug))
@@ -51,3 +53,8 @@ class Category(models.Model):
     @permalink
     def get_absolute_url(self):
         return ("view_blog_category", None, {"slug": self.slug})
+
+    def save(self):
+        if not self.slug:
+            self.slug = unicode(self.title)
+        super(Category, self).save()

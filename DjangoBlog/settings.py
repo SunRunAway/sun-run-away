@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
 
     'blog',
+    'django_xmlrpc',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -184,3 +185,15 @@ else:
             "PORT": "",
         }
     }
+
+
+XMLRPC_METHODS = (
+                ('xmlrpc.metaweblog.blogger_getUsersBlogs', 'blogger.getUsersBlogs'),
+                ('xmlrpc.metaweblog.metaWeblog_getCategories','metaWeblog.getCategories'),
+                ('xmlrpc.metaweblog.metaWeblog_getPost','metaWeblog.getPost'),
+                ('xmlrpc.metaweblog.metaWeblog_getRecentPosts','metaWeblog.getRecentPosts'),
+                ('xmlrpc.metaweblog.metaWeblog_newPost','metaWeblog.newPost'),
+                ('xmlrpc.metaweblog.metaWeblog_editPost','metaWeblog.editPost'),
+                ('xmlrpc.metaweblog.blogger_deletePost','blogger.deletePost'),
+                ('xmlrpc.metaweblog.metaWeblog_newMediaObject','metaWeblog.newMediaObject'),
+                )

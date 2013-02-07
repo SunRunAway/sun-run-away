@@ -20,7 +20,6 @@ urlpatterns = patterns('',
         'blog.views.view_category',
         name='view_blog_category'
     ),
-
 )
 
 # for RSS

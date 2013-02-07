@@ -11,11 +11,16 @@
 {% block content %}
     {% if posts %}
         {% for post in posts %}
-            <li class='post'>
+            <li>
                 <article>
                     <h2><a class='no-link' href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                     <p>{{ post.body|safe }}</p>
                 </article>
+            </li>
+            <li class='padded'>
+                <a class="buttonize square" href="{{ post.get_absolute_url }}#disqus_thread" data-disqus-identifier="{{ post.id }}">Comments</a>
+            </li>
+            <li class='post'>
             </li>
         {% endfor %}
     {% else %}
@@ -23,8 +28,20 @@
     {% endif %}
 {% endblock %}
 
+{% block disqus_comment_count %}
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sunrunaway'; // required: replace example with your forum shortname
 
-
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+{% endblock %}
 
 
 

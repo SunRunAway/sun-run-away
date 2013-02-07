@@ -14,9 +14,10 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^blog/', include('blog.urls')),
+    url(r'^$', include('blog.urls')),
+    url(r'^xmlrpc/', include('xmlrpc.urls')),
 
     url(r'^robots\.txt$', direct_to_template, {'template': 'robots.txt', 'mimetype': 'text/plain'}),
-    url(r'^$', include('blog.urls')),
 )
 
 # for heroku
