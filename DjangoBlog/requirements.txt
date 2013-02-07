@@ -2,3 +2,4 @@ django
 mysql-python
 docutils
 markdown
+django-xmlrpc

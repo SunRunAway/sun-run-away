@@ -23,13 +23,10 @@ def authenticated(pos=1):
             try:
                 user = User.objects.get(username__exact=username)
             except User.DoesNotExist:
-                traceback.print_exc()
                 raise ValueError("Authentication Failure")
             if not user.check_password(password):
-                traceback.print_exc()
                 raise ValueError("Authentication Failure")
             if not user.is_superuser:
-                traceback.print_exc()
                 raise ValueError("Authorization Failure")
             return func(user, *args, **kwargs)
 
@@ -181,4 +178,5 @@ def metaWeblog_newMediaObject(user, blogid, struct):
 
     # This method isn't implemented yet, obviously.
 
+    # TODO qiniu
     return {}
