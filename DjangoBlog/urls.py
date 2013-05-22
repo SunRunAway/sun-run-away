@@ -1,6 +1,15 @@
 from django.conf.urls.defaults import *
 from django.views.generic import TemplateView
 
+from django.template.response import TemplateResponse
+
+class TextResponse(TemplateResponse):
+    def __init__(self, *args, **kwargs):
+        kwargs['mimetype'] = 'text/plain'
+        return super(TextResponse, self).__init__(*args, **kwargs)
+
+# ----------------------------------------------------------------------
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -17,8 +26,10 @@ urlpatterns = patterns('',
     url(r'^$', include('blog.urls')),
     url(r'^blog/xmlrpc/', include('xmlrpc.urls')),
 
-    url(r'^robots\.txt$', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', response_class=TextResponse)),
 )
+
+# ----------------------------------------------------------------------
 
 # for heroku
 import settings
