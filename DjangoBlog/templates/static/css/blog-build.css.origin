@@ -144,7 +144,7 @@ header#simple h1 {
 header#simple h1 a {
 	font-family: 'freight-sans-pro', 'Microsoft YaHei', '文泉驿微米黑', sans-serif;
 	font-weight: 900;
-	font-size: 33px;
+	font-size: 32px;
 	line-height: 60px;
 	border: none;
 }
