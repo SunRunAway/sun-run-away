@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.conf import settings
 from blog.models import Category, Blog
-from xmlrpc.views import public
+
 
 def authenticated(pos=1):
     """
@@ -115,11 +115,9 @@ def post_struct(blog):
 
 @authenticated()
 def metaWeblog_newPost(user, blogid, struct, publish):
-
     # todo - parse out technorati tags
     post = Blog(title = struct['title'],
                 body_markdown = struct['description'],
-                posted = datetime.strptime(struct['dateCreated'].value[:18], '%Y-%m-%dT%H:%M:%S'),
                 slug = struct.get('permaLink', None),
                )
     post.save()
@@ -134,7 +132,7 @@ def setTags(post, struct):
     if tags is None:
         post.category = []
     else:
-        post.category = [Category.objects.get(name__iexact=name) for name in tags]
+        post.category = [Category.objects.get(title__iexact=name) for name in tags]
 
 
 @authenticated()
