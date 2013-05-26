@@ -6,3 +6,4 @@ celerybeat-schedule.db
 .directory
 *.swp
 *.kate-swp
+.idea/
