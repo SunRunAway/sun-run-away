@@ -3,6 +3,7 @@ celerybeat-schedule
 celerybeat-schedule.db
 
 *.pyc
+.anvil
 .directory
 *.swp
 *.kate-swp
