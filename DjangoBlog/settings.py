@@ -1,4 +1,6 @@
 # Django settings for a generic project.
+print 'settings.py begins'
+
 import os
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -177,14 +179,19 @@ if 'VCAP_SERVICES' in os.environ:
 else:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.mysql",
-            "NAME": "sunrunaway",
-            "USER": "root",
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": "test.db",
+            "USER": "",
             "PASSWORD": "",
             "HOST": "",
             "PORT": "",
         }
     }
+
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 XMLRPC_METHODS = (
@@ -197,3 +204,5 @@ XMLRPC_METHODS = (
                 ('xmlrpc.metaweblog.blogger_deletePost','blogger.deletePost'),
                 ('xmlrpc.metaweblog.metaWeblog_newMediaObject','metaWeblog.newMediaObject'),
                 )
+
+print 'settings.py ends'
