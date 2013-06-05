@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-print 'manage.py'
 from django.core.management import execute_manager
 import imp
 try:
