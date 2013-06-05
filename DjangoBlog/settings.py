@@ -157,6 +157,7 @@ INSTALLED_APPS = (
 
 ## Pull in CloudFoundry's production settings
 if 'VCAP_SERVICES' in os.environ:
+    print 'database in appfog'
     import json
     vcap_services = json.loads(os.environ['VCAP_SERVICES'])
     # XXX: avoid hardcoding here
@@ -177,6 +178,7 @@ if 'VCAP_SERVICES' in os.environ:
     TEMPLATE_DEBUG = DEBUG
     STATIC_URL = 'http://sunrunaway.qiniudn.com/static/'
 else:
+    print 'database in local'
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -188,9 +190,11 @@ else:
         }
     }
 
-if 'DATABASE_URL' in os.environ:
-    import dj_database_url
-    DATABASES['default'] =  dj_database_url.config()
+import dj_database_url
+heroku_db = dj_database_url.config()
+if len(heroku_db) > 0:
+    print 'database in heroku'
+    DATABASES['default'] = heroku_db
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
