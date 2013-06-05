@@ -190,11 +190,10 @@ else:
         }
     }
 
-import dj_database_url
-heroku_db = dj_database_url.config()
-if len(heroku_db) > 0:
+if 'DATABASE_URL' in os.environ:
     print 'database in heroku'
-    DATABASES['default'] = heroku_db
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
